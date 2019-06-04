@@ -80,9 +80,21 @@ def fmtShortcut(text):
 def generateColorByText(text):
     s = ustr(text)
     hashCode = int(hashlib.sha256(s.encode('utf-8')).hexdigest(), 16)
+    # r = int((hashCode / 255) % 255)
+    # g = int((hashCode / 65025)  % 255)
+    # b = int((hashCode / 16581375)  % 255)
+    r = 0
+    g = 255
+    b = 0
+    return QColor(r, g, b, 255)
+
+def generateColorByText_orignal(text):
+    s = ustr(text)
+    hashCode = int(hashlib.sha256(s.encode('utf-8')).hexdigest(), 16)
     r = int((hashCode / 255) % 255)
     g = int((hashCode / 65025)  % 255)
     b = int((hashCode / 16581375)  % 255)
+    
     return QColor(r, g, b, 100)
 
 def have_qstring():
