@@ -7,7 +7,7 @@ import platform
 import re
 import sys
 import subprocess
-
+from libs.resources import *
 from functools import partial
 from collections import defaultdict
 
